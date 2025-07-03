@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokemones!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <input type="text" id="search" placeholder="Ingresa un Pokemon">
+    <button onclick="getPokemon()">Buscar pokemon</button>
+
+    <div id="pokemon-info">
+        <img id="sprite" src="data:image/png;base64,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" alt="">
+        <h1 id="name"></h1>
+        <h2 id="type"></h2>
+        <p id="hp"></p>
+        <p id="height"></p>
+        <p id="weight"></p>
+        <p id="attack"></p>
+        <p id="special-attack"></p>
+        <p id="defense"></p>
+        <p id="special-defense"></p>
+        <p id="speed"></p>
+        <p id="abilities"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
